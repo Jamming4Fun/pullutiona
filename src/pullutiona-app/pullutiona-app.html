@@ -1,4 +1,6 @@
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/google-map/google-map.html">
+<link rel="import" href="../../bower_components/google-map/google-map-marker.html">
 
 <dom-module id="pullutiona-app">
   <template>
@@ -6,10 +8,18 @@
       :host {
         display: block;
       }
+
+      google-map {
+        height: 100vh;
+        width: 100vw;
+      }
     </style>
-    <h2>Hello [[prop1]]!</h2>
-    <google-maps>
-      
+
+    <google-map latitude="2.9094747"
+                longitude="101.6314353"
+                api-key="AIzaSyC01I3twYn5XeuXE8Z9GqPHzB-rJIUIEDU"
+                zoom="14"></google-map>
+
 
   </template>
 
