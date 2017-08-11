@@ -1,4 +1,20 @@
 {
+  "entrypoint": "index.html",
+  "shell": "src/pullutiona-app/pullutiona-app.html",
+  "fragments": [
+    "src/webvr-viewer/webvr-viewer.html",
+    "src/image-gallery/image-gallery.html"
+  ],
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "assets/**/*",
+    "package.json"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/*.js"
+  ],
   "lint": {
     "rules": [
       "polymer-2"
