@@ -2,14 +2,10 @@
   "entrypoint": "index.html",
   "shell": "src/pullutiona-app/pullutiona-app.html",
   "fragments": [
-    "src/webvr-viewer/webvr-viewer.html",
-    "src/image-gallery/image-gallery.html"
+    
   ],
   "sources": [
-    "src/**/*",
-    "images/**/*",
-    "assets/**/*",
-    "package.json"
+    "src/**/*"
   ],
   "extraDependencies": [
     "manifest.json",
