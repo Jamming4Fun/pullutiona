@@ -1,0 +1,7 @@
+{
+  "name": "pulllutiona",
+  "short_name": "pulllutiona",
+  "description": "A pollution Tracker w/ Alarm",
+  "start_url": "/",
+  "display": "standalone"
+}
