@@ -2,7 +2,7 @@
   "entrypoint": "index.html",
   "shell": "src/pullutiona-app/pullutiona-app.html",
   "fragments": [
-    
+
   ],
   "sources": [
     "src/**/*"
