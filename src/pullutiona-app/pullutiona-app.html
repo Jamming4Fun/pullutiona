@@ -15,31 +15,18 @@
       }
     </style>
 
-    <google-map latitude="2.9094747"
-                longitude="101.6314353"
+    <google-map id="gmap"
+                latitude="2.9163353"
+                longitude="101.6518609"
                 api-key="AIzaSyC01I3twYn5XeuXE8Z9GqPHzB-rJIUIEDU"
-                zoom="14"></google-map>
+                zoom="15"
+                fitToMarkers
+                markers="[[markers]]"
+                map="{{map}}"></google-map>
 
 
   </template>
 
-  <script>
-    /**
-     * @customElement
-     * @polymer
-     */
-    class PullutionaApp extends Polymer.Element {
-      static get is() { return 'pullutiona-app'; }
-      static get properties() {
-        return {
-          prop1: {
-            type: String,
-            value: 'pullutiona-app'
-          }
-        };
-      }
-    }
+  <script type="application/javascript" src="pullutiona-app.js"></script>
 
-    window.customElements.define(PullutionaApp.is, PullutionaApp);
-  </script>
 </dom-module>
