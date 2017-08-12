@@ -61,16 +61,46 @@ class PullutionaApp extends Polymer.Element {
   _addMarkers(devices) {
     console.debug(PullutionaApp.is, devices);
 
+    var markerClick = function(marker, infoWindow) {
+      return function() {
+        infoWindow.open(this.map, marker);
+      };
+    };
+
     for (let i = 0; i < devices.length; i++) {
+
+      var infoWindow = new google.maps.InfoWindow({
+        content: devices[i].label
+      });
+
       var marker = new google.maps.Marker({
         position: {lat: devices[i].lat, lng: devices[i].lng},
         map: this.map,
-        title: devices[i].label
+        title: devices[i].label,
+        clickEvents: true,
+        icon: {url: 'assets/mapicon_36x36.png'},
       });
+
+      marker.addListener('click', (markerClick)(marker, infoWindow));
+
+      /*google.maps.event.addListener(marker, 'click', function() {
+        var marker_map = this.getMap();
+        this.info.open(marker_map);
+      });*/
+
+      //this.$.gmap.addEventListener('google-map-marker-click', m => {this._markerClicked(m);});
+
       this.markers.push(marker);
     }
 
     console.debug(PullutionaApp.is, this.markers);
+  }
+
+   _markerClicked() {
+     console.debug(PullutionaApp.is, 'marker clicked: ', this);
+
+     var marker_map = this.getMap();
+     this.info.open(marker_map);
   }
 
 
