@@ -5,7 +5,16 @@
 <link rel="import" href="../../bower_components/polymerfire/firebase-query.html">
 
 <dom-module id="pullutiona-app">
-  <template>
+  <firebase-app
+  auth-domain="pullutiona.firebaseapp.com"
+  database-url="https://pullutiona.firebaseio.com/"
+  api-key="AIzaSyBCA4ORvvgQCXaz1LBptSMu_TJdVyGG0lk"
+  storage-bucket="pullutiona.appspot.com"
+  messaging-sender-id="546333636187">
+</firebase-app>
+<firebase-auth id="auth" user="{{user}}" signed-in="{{signedIn}}" provider="facebook" on-error="handleError">
+</firebase-auth>
+  <template on-sign-in="signIn">
     <style>
       :host {
         display: block;
@@ -23,9 +32,14 @@
      * @polymer
      */
     class PullutionaApp extends Polymer.Element {
-      static get is() { return 'pullutiona-app'; }
+      static get is() { 
+        return 'pullutiona-app'; 
+      }
       static get properties() {
         return {
+          signIn: function() {
+            this.$.auth.signInWithPopup();
+          },
           prop1: {
             type: String,
             value: 'pullutiona-app'
